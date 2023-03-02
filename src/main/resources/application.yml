@@ -1,0 +1,45 @@
+resilience4j:
+    circuitbreaker:
+        configs:
+            defecto: #nombre de la configuracion
+                sliding-window-size: 6 #cantidad de request q se toman en cuenta para analizar el corto circuito (100 por defecto)
+                failure-rate-threshold: 50 #tasa de falla para q se ejecute el corto circuito (50% por defecto)
+                wait-duration-in-open-state: 20s #duracion del estado abierto del corto circuito (60s por defecto)
+                permitted-number-of-calls-in-half-open-state: 4 #numero de llamadas permitidas en el estado semiabierto (10 por defecto)
+                slow-call-rate-threshold: 50 #umbral en % de las llamadas lentas permitidas (100% por defecto)
+                slow-call-duration-threshold: 2s #duracion de lo q se considera una llamada lenta
+        instances:
+            items: #nnombre de corto circuito q se usa
+                base-config: defecto
+    timelimiter:
+        configs:
+          defecto:
+            timeout-duration: 2s
+        instances:
+          items:
+            base-config: defecto
+
+
+#resilience4j:
+ # circuitbreaker:
+  #  configs:
+   #   defecto:
+    #    sliding-window-size: 6
+     #   failure-rate-threshold: 50
+      #  wait-duration-in-open-state: 20s
+       # permitted-number-of-calls-in-half-open-state: 4
+        #slow-call-rate-threshold: 50
+        #slow-call-duration-threshold: 2s
+   # instances:
+   #   items:
+    #    base-config: defecto
+  #timelimiter:
+   # configs:
+    #  defecto:
+     #   timeout-duration: 2s
+    #instances:
+     # items:
+      #  base-config: defecto
+
+
+        
