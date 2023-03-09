@@ -2,13 +2,13 @@ package com.formacionbdi.springboot.app.item.models.service;
 
 import com.formacionbdi.springboot.app.item.clientes.ProductoClienteRest;
 import com.formacionbdi.springboot.app.item.models.Item;
-import com.formacionbdi.springboot.app.item.models.Producto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
+import com.formacionbdi.springboot.app.commons.models.entity.Producto;
 
 @Service
 @Primary
